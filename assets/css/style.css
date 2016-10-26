@@ -4,6 +4,7 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    overflow: scroll;
 }
 
 .char-boxes {
@@ -16,6 +17,12 @@ body {
     background-color: red;
 }
 
+.defender-char-boxes {
+    color: white;
+    border: red solid 2px;
+    background-color: black;
+}
+
 img {
     width: 100%;
 }
@@ -26,4 +33,18 @@ img {
 
 .margin-left {
     margin-left: 0px;
+}
+
+.my-background {
+    background-color: rgba(255, 255, 255, 0.6);
+    color: inherit;
+}
+
+.header-padding {
+    padding: 15px 5px;
+    color: black;
+}
+
+.status-padding {
+    padding: 3px 1px;
 }
