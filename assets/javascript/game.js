@@ -11,7 +11,7 @@ var obiStats = { hp: 120, dmg: 8, counter: '' };
 var sidiousStats = { hp: 150, dmg: '', counter: 20 };
 var maulStats = { hp: 180, dmg: '', counter: 25 }
 
-
+//make sure to comment and say what the code in the blocks does
 
 
 $('#Luke').click(function() {
@@ -192,3 +192,13 @@ $('#attack-button').click(function() {
 
     }
 })
+
+
+//need to add win loss checks into each #attack-button if else event
+function winChecker() {
+
+}
+
+function loseChecker() {
+
+}
