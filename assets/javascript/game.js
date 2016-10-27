@@ -10,10 +10,14 @@ var lukeStats = { hp: 100, dmg: '', counter: 5 };
 var obiStats = { hp: 120, dmg: 8, counter: '' };
 var sidiousStats = { hp: 150, dmg: '', counter: 20 };
 var maulStats = { hp: 180, dmg: '', counter: 25 }
+    //
+    //make sure to comment and say what the code in the blocks does
+    //
 
-//make sure to comment and say what the code in the blocks does
-
-
+//when luke, obi, darth sidious, or darth maul is clicked under the "choose a hero" heading; 
+//the variable CHOSENHEROHero is set to true, the char-boxes class is removed and the html 
+//for the unchosen heros is set to nothing, the remaining unchosen heros are recreated in
+//the corresponding enemies div
 $('#Luke').click(function() {
     lukeHero = true;
     $('#Obi').removeClass('char-boxes').html('');
