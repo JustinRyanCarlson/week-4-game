@@ -444,10 +444,10 @@ function reset() {
     sidiousStats = { hp: 150, dmg: 0, counter: 15 };
     maulStats = { hp: 180, dmg: 0, counter: 18 };
     enemiesDefeated = 0;
-    $('#current-defender').html('');
-    $('#enemy1').html('');
-    $('#enemy2').html('');
-    $('#enemy3').html('');
+    $('#current-defender').removeClass('defender-char-boxes').html('');
+    $('#enemy1').removeClass('enemy-char-boxes').html('');
+    $('#enemy2').removeClass('enemy-char-boxes').html('');
+    $('#enemy3').removeClass('enemy-char-boxes').html('');
     $('#Luke').html('<h5 class="text-center">Luke Skywalker</h5>' +
         '<img class="center" src="assets/images/luke-skywalker.jpg" alt="Luke Skywalker">' +
         '<h5 class="text-center" id="luke-hp">100</h5>').addClass('char-boxes');
