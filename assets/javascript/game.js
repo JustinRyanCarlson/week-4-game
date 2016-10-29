@@ -12,6 +12,7 @@ var sidiousStats = { hp: 150, dmg: 0, counter: 15 };
 var maulStats = { hp: 180, dmg: 0, counter: 18 };
 var enemiesDefeated = 0;
 
+//hides the reset button from the user until the game ends
 $('#reset-button').hide();
 
 
@@ -109,7 +110,11 @@ $('#Maul').click(function() {
 
 
 
-
+//after all the enemies are moved into the corresponding enemy divs, I check to make sure that there is
+//not a current defender in the defender section. This is to make sure the user cant attack a enemy
+//they chose as a defender then switch to another before they defeat them.
+//the enemies that are placed in these divs depend on who the user selected as their hero so the
+//characters are in the correct order still
 $('#enemy1').click(function() {
     if (lukeDefender === false && obiDefender === false &&
         sidiousDefender === false && maulDefender === false) {
@@ -174,7 +179,14 @@ $('#enemy3').click(function() {
 
 
 
-
+//This section could be done better with functions but im out of time. When the attack button is clicked,
+//the if else if statements check to see who the hero is and who the defender is. If this button is clicked
+//before a hero or defender is chosen it will as the player to choose the respective character. When a 
+//hero and defender is chosen the code then increases the attack of the hero, decreases the heros hp respective
+//to the defenders counter, and decreases the defenders hp respective to the hero attack. If the defenders
+//hp reaches 0 or below, the defender div is deleted, the enemies defeated counter is incrimented, 
+//and the defender switch back to false so a new defender can be chosen. Lastly the win and lose functions
+//will be ran to check if the user had won or lost on that click.
 $('#attack-button').click(function() {
     $('#status').addClass('status-padding');
     if (lukeHero === false && obiHero === false &&
@@ -378,7 +390,7 @@ $('#attack-button').click(function() {
     }
 })
 
-
+//When the reset button is clicked, the games resets via the reset function.
 $('#reset-button').click(function() {
     reset();
 })
@@ -393,7 +405,9 @@ $('#reset-button').click(function() {
 
 
 
-
+//This function is called every time the attack button it clicked. It checks if the number of
+//enemies defeated is equal to 3 and if so it tells the user they won, disables the attack button,
+//and shows the reset button.
 function winChecker() {
     if (enemiesDefeated === 3) {
         $('#status').html('You WIN!');
@@ -402,6 +416,9 @@ function winChecker() {
     }
 }
 
+//This function is called every time the attack button is clicked. It checks the heros hp stat depending
+//on what hero the user chose. If the heros health falls below 0, it tells the user they lost, disables
+//the attack button, and shows the reset button.
 function loseChecker() {
     if (lukeHero === true) {
         if (lukeStats.hp <= 0) {
@@ -430,6 +447,7 @@ function loseChecker() {
     }
 }
 
+//This function is called when the user clicks the reset button. It resets the game to be played again.
 function reset() {
     lukeHero = false;
     obiHero = false;
